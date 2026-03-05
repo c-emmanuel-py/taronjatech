@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="g1" cx="25%" cy="15%" r="65%">
+      <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#FF6A00" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0B0D12" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="85%" cy="70%" r="75%">
+      <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.10"/>
+      <stop offset="65%" stop-color="#0B0D12" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0" x2="1">
+      <stop offset="0" stop-color="#0B0D12"/>
+      <stop offset="0.5" stop-color="#0B0D12"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+    <filter id="softNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 0.06 0"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#0B0D12"/>
+  <rect width="1920" height="1080" fill="url(#g1)"/>
+  <rect width="1920" height="1080" fill="url(#g2)"/>
+  <g opacity="0.55" filter="url(#softNoise)">
+    <rect width="1920" height="1080" fill="#0B0D12"/>
+  </g>
+  <g opacity="0.14" stroke="#FF6A00" stroke-width="1">
+    <path d="M-50 240 C 280 160, 540 360, 860 280 S 1360 180, 1970 360" fill="none"/>
+    <path d="M-80 520 C 340 400, 620 620, 980 520 S 1500 420, 2000 640" fill="none"/>
+    <path d="M-120 820 C 360 720, 720 940, 1100 820 S 1520 740, 2040 920" fill="none"/>
+  </g>
+</svg>
