@@ -31,7 +31,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="text-sm text-gray-500 max-w-md">
+          <div className="text-sm text-gray-600 max-w-md">
             {t('footer.legal')}
           </div>
         </div>

@@ -12,8 +12,9 @@ export function Hero() {
 
   return (
     <section
-      className="relative min-h-[90vh] overflow-hidden pt-24 pb-20 sm:pt-28 sm:pb-24 flex items-center"
+      className="relative min-h-[60vh] flex-1 flex items-center overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-14"
       aria-label="Introducción"
+      data-theme="dark"
     >
       {/* Background: hero-bg.svg */}
       <div
@@ -42,13 +43,13 @@ export function Hero() {
       />
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl animate-slide-up" style={{ animationDelay: '0.1s', opacity: 0, animationFillMode: 'forwards' }}>
             {t('hero.headline')}
           </h1>
-          <p className="mt-4 text-lg text-gray-300 sm:text-xl">
+          <p className="mt-4 text-lg text-gray-300 sm:text-xl animate-slide-up" style={{ animationDelay: '0.25s', opacity: 0, animationFillMode: 'forwards' }}>
             {t('hero.subheadline')}
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>
             <Button
               variant="primary"
               size="lg"
@@ -65,17 +66,17 @@ export function Hero() {
               {t('hero.ctaSecondary')}
             </Button>
           </div>
-          <ul className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400" role="list">
+          <ul className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-gray-400 animate-fade-in" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }} role="list">
             <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-float" style={{ animationDelay: '0s' }} aria-hidden />
               {t('hero.bullet1')}
             </li>
             <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-float" style={{ animationDelay: '0.2s' }} aria-hidden />
               {t('hero.bullet2')}
             </li>
             <li className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-float" style={{ animationDelay: '0.4s' }} aria-hidden />
               {t('hero.bullet3')}
             </li>
           </ul>

@@ -20,6 +20,7 @@ export function SecurityCompliance() {
       id="security"
       className="relative overflow-hidden bg-[#0B0D12] py-16 sm:py-20 lg:py-24"
       ariaLabel={t('security.title')}
+      dataTheme="dark"
     >
       <SectionBackground src={securityBg} opacity={0.65} showOverlay />
       <Container className="relative z-10">
@@ -49,7 +50,7 @@ export function SecurityCompliance() {
           </Card>
         </div>
         <div className="mt-6">
-          <Card className="border-accent/40 bg-accent/10 shadow-none">
+          <Card className="border-white/10 bg-white/5 shadow-none hover:bg-white/[0.08]">
             <h3 className="font-semibold text-white">{t('security.kycReady')}</h3>
             <p className="mt-2 text-sm text-gray-300">{t('security.kycReadyDesc')}</p>
           </Card>

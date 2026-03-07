@@ -37,10 +37,17 @@ export function TechStack() {
   return (
     <Section
       id="techstack"
-      className="relative overflow-hidden bg-[#0B0D12] py-16 sm:py-20 lg:py-24"
+      className="relative min-h-[100vh] overflow-hidden bg-[#0B0D12] py-16 sm:py-20 lg:py-24 flex flex-col justify-center"
       ariaLabel={t('techStack.title')}
+      dataTheme="dark"
     >
-      <SectionBackground src={techBg} opacity={0.65} showOverlay />
+      <SectionBackground
+        src={techBg}
+        opacity={0.65}
+        showOverlay
+        overlayVariant="strong"
+        className="animate-breathing"
+      />
       <Container className="relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
@@ -58,7 +65,7 @@ export function TechStack() {
                   key={category}
                   className="rounded-lg border border-white/10 bg-white/5 px-4 py-3"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gray-300 mb-2">
                     {label}
                   </p>
                   <div className="flex flex-wrap gap-2">

@@ -34,6 +34,7 @@ export function SOWPreview() {
       id="sow"
       className="relative overflow-hidden bg-[#0B0D12] py-16 sm:py-20 lg:py-24"
       ariaLabel={t('sow.title')}
+      dataTheme="dark"
     >
       <SectionBackground src={sowBg} opacity={0.65} showOverlay />
       <Container className="relative z-10">

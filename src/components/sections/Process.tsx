@@ -16,7 +16,7 @@ export function Process() {
   return (
     <Section id="process" className="bg-gray-50" ariaLabel={t('process.title')}>
       <Container>
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
             {t('process.title')}
           </h2>
@@ -29,12 +29,12 @@ export function Process() {
         <div className="hidden md:block">
           <div className="flex justify-between gap-2">
             {steps.map((step, i) => (
-              <div key={step.id} className="flex-1 flex flex-col items-center text-center">
+              <div key={step.id} className="flex-1 flex flex-col items-center text-center animate-fade-in-up" style={{ animationDelay: `${0.1 + i * 0.08}s`, opacity: 0, animationFillMode: 'forwards' }}>
                 <div className="flex items-center w-full">
                   {i > 0 && (
                     <div className="flex-1 h-0.5 bg-gray-300" aria-hidden />
                   )}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white transition-transform duration-300 hover:scale-110">
                     {step.id}
                   </div>
                   {i < steps.length - 1 && (
