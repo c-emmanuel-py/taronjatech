@@ -97,11 +97,12 @@ export function Services() {
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {items.map((service, idx) => (
-            <Card
+            <div
               key={service.id}
-              className="flex flex-col animate-fade-in-up"
+              className="animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.06}s`, opacity: 0, animationFillMode: 'forwards' }}
             >
+            <Card className="flex flex-col">
               <h4 className="font-semibold text-gray-900">
                 {t(service.titleKey)}
               </h4>
@@ -129,6 +130,7 @@ export function Services() {
                 {t('services.ctaCard')}
               </Button>
             </Card>
+            </div>
           ))}
         </div>
       </Container>
