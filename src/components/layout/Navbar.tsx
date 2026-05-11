@@ -11,6 +11,7 @@ const navLinks = [
   { id: 'services', key: 'nav.services' },
   { id: 'industries', key: 'nav.industries' },
   { id: 'process', key: 'nav.process' },
+  { id: 'projects-results', key: 'nav.projects' },
   { id: 'security', key: 'nav.security' },
   { id: 'sow', key: 'nav.sow' },
   { id: 'team', key: 'nav.team' },
@@ -40,6 +41,7 @@ export function Navbar() {
               alt="Taronja Tech logo"
               width={28}
               height={28}
+              loading="lazy"
               className="h-7 w-7 shrink-0"
             />
             <span>{t('nav.logo')}</span>
@@ -78,3 +80,5 @@ export function Navbar() {
     </header>
   )
 }
+
+export default Navbar

@@ -22,7 +22,7 @@ export function LanguageToggle({ variant = 'light' }: { variant?: Variant }) {
         type="button"
         onClick={() => setLanguage('es')}
         className={cn(
-          'rounded-md px-2.5 py-1 text-sm font-medium transition-colors',
+          'rounded-md px-2.5 py-1 text-sm font-medium transition-colors min-h-[44px]',
           isDark
             ? language === 'es'
               ? 'bg-white/25 text-white'
@@ -40,7 +40,7 @@ export function LanguageToggle({ variant = 'light' }: { variant?: Variant }) {
         type="button"
         onClick={() => setLanguage('en')}
         className={cn(
-          'rounded-md px-2.5 py-1 text-sm font-medium transition-colors',
+          'rounded-md px-2.5 py-1 text-sm font-medium transition-colors min-h-[44px]',
           isDark
             ? language === 'en'
               ? 'bg-white/25 text-white'
@@ -57,3 +57,5 @@ export function LanguageToggle({ variant = 'light' }: { variant?: Variant }) {
     </div>
   )
 }
+
+export default LanguageToggle

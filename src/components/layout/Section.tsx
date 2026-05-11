@@ -23,3 +23,5 @@ export function Section({ id, children, className, ariaLabel, dataTheme }: Secti
     </section>
   )
 }
+
+export default Section

@@ -18,3 +18,5 @@ export function Badge({ children, className }: BadgeProps) {
     </span>
   )
 }
+
+export default Badge

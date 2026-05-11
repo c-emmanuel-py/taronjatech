@@ -27,3 +27,5 @@ export function Toast({ message, type, onClose, duration = 5000 }: ToastProps) {
     </div>
   )
 }
+
+export default Toast

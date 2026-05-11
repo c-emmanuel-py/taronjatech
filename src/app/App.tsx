@@ -3,15 +3,18 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { TrustBar } from '@/components/sections/TrustBar'
+import { Metrics } from '@/components/sections/Metrics'
 import { Services } from '@/components/sections/Services'
 import { Industries } from '@/components/sections/Industries'
 import { Process } from '@/components/sections/Process'
 import { TechStack } from '@/components/sections/TechStack'
 import { SecurityCompliance } from '@/components/sections/SecurityCompliance'
 import { SOWPreview } from '@/components/sections/SOWPreview'
+import { ProjectsResults } from '@/components/sections/ProjectsResults'
 import { Team } from '@/components/sections/Team'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
+import { ClosingCTA } from '@/components/sections/ClosingCTA'
 import { Contact } from '@/components/sections/Contact'
 import { BackToTop } from '@/components/sections/BackToTop'
 
@@ -39,6 +42,7 @@ export default function App() {
         <Block>
           <Hero />
           <TrustBar />
+          <Metrics />
         </Block>
 
         {/* Bloque 2: Services = 100vh */}
@@ -69,6 +73,10 @@ export default function App() {
           </div>
         </Block>
 
+        <Block className="justify-center">
+          <ProjectsResults />
+        </Block>
+
         {/* Bloque 7: Team + Testimonials = 100vh */}
         <Block>
           <Team />
@@ -80,6 +88,10 @@ export default function App() {
         {/* Bloque 8: FAQ = 100vh */}
         <Block className="justify-center">
           <FAQ />
+        </Block>
+
+        <Block className="justify-center">
+          <ClosingCTA />
         </Block>
 
         {/* Bloque 9: Contact = 100vh */}

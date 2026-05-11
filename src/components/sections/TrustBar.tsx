@@ -1,54 +1,72 @@
 import { useI18n } from '@/i18n/useI18n'
 import { Container } from '@/components/layout/Container'
-import { cn } from '@/utils/cn'
 
-const trustChips = [
-  'trustBar.quality',
-  'trustBar.security',
-  'trustBar.scalability',
-  'trustBar.transparency',
-  'trustBar.support',
-  'trustBar.documentation',
+const industryKeys = [
+  'industries.fintech',
+  'industries.ecommerce',
+  'industries.logistics',
+  'industries.realEstate',
+  'industries.education',
+  'industries.professional',
 ] as const
 
-function CheckIcon({ className }: { className?: string }) {
+function IndustryIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z" />
+      <path d="M12 12v9M4 7.5l8 4.5 8-4.5" />
     </svg>
   )
 }
 
 export function TrustBar() {
   const { t } = useI18n()
+  const marqueeItems = [...industryKeys, ...industryKeys]
 
   return (
-    <section className="shrink-0 border-y border-gray-200 bg-gray-50/80 py-5 sm:py-6" aria-label="Garantías" data-theme="light">
+    <section className="shrink-0 border-y border-gray-200 bg-[#F8F7F5] py-6 sm:py-7" aria-label="Trust industries" data-theme="light">
+      <style>{`
+        @keyframes trustMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
       <Container>
-        <div className="flex flex-col items-center gap-6 text-center">
-          {/* Pills como badges de valor, no como tabs */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {trustChips.map((key, i) => (
+        <div className="flex flex-col items-center gap-5 text-center">
+          <p className="text-xs font-medium tracking-wide text-gray-600">
+            {t('trustBar.title')}
+          </p>
+
+          {/* Mobile: horizontal continuous marquee */}
+          <div className="w-full overflow-hidden md:hidden">
+            <div
+              className="flex w-max gap-3"
+              style={{ animation: 'trustMarquee 22s linear infinite' }}
+            >
+              {marqueeItems.map((key, i) => (
+                <span
+                  key={`${key}-${i}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-700 shadow-sm whitespace-nowrap"
+                >
+                  <IndustryIcon className="h-3.5 w-3.5 text-gray-500" />
+                  {t(key)}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: grid */}
+          <div className="hidden w-full max-w-4xl grid-cols-3 gap-3 md:grid">
+            {industryKeys.map((key) => (
               <span
                 key={key}
-                className={cn(
-                  'inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-800 shadow-sm',
-                  'transition-all duration-200 hover:border-accent/50 hover:shadow-md hover:text-accent'
-                )}
-                style={{ opacity: 0, animation: `fadeIn 0.5s ease-out ${i * 0.05}s forwards` }}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 shadow-sm"
               >
-                <CheckIcon className="h-4 w-4 shrink-0 text-accent" />
+                <IndustryIcon className="h-4 w-4 text-gray-500" />
                 {t(key)}
               </span>
             ))}
           </div>
-          {/* Línea de garantías integrada */}
-          <p className="flex max-w-2xl flex-wrap items-center justify-center gap-2 text-sm text-gray-600">
-            <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10">
-              <CheckIcon className="h-4 w-4 text-accent" />
-            </span>
-            <span>{t('trustBar.guarantees')}</span>
-          </p>
         </div>
       </Container>
     </section>

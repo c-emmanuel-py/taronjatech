@@ -17,3 +17,5 @@ export const Textarea = forwardRef<
   )
 })
 Textarea.displayName = 'Textarea'
+
+export default Textarea

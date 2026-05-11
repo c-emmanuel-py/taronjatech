@@ -29,3 +29,32 @@
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-accent;
 }
+
+/* Dot grid pattern - reutilizable */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 106, 0, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Smooth scroll global */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible para accesibilidad */
+:focus-visible {
+  outline: 2px solid #FF6A00;
+  outline-offset: 2px;
+}
+
+/* Animación contador (usada en Metrics.tsx) */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -2,12 +2,19 @@ import { useState } from 'react'
 import { useI18n } from '@/i18n/useI18n'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
-import { faqs } from '@/data/faqs'
 import { cn } from '@/utils/cn'
+import { scrollToId } from '@/utils/scroll'
+
+const objectionFaqs = [
+  { id: 'q1', questionKey: 'faq.q1', answerKey: 'faq.a1' },
+  { id: 'q2', questionKey: 'faq.q2', answerKey: 'faq.a2' },
+  { id: 'q3', questionKey: 'faq.q3', answerKey: 'faq.a3' },
+  { id: 'q4', questionKey: 'faq.q4', answerKey: 'faq.a4' },
+] as const
 
 export function FAQ() {
   const { t } = useI18n()
-  const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null)
+  const [openId, setOpenId] = useState<string | null>(objectionFaqs[0]?.id ?? null)
 
   return (
     <Section id="faq" ariaLabel={t('faq.title')}>
@@ -21,7 +28,7 @@ export function FAQ() {
           </p>
         </div>
         <div className="mx-auto max-w-2xl space-y-2">
-          {faqs.map((faq) => {
+          {objectionFaqs.map((faq) => {
             const isOpen = openId === faq.id
             return (
               <div
@@ -63,6 +70,15 @@ export function FAQ() {
               </div>
             )
           })}
+        </div>
+        <div className="mt-8 text-center">
+          <button
+            type="button"
+            onClick={() => scrollToId('contact')}
+            className="text-sm text-gray-600 hover:text-accent transition-colors"
+          >
+            {t('faq.moreQuestions')}
+          </button>
         </div>
       </Container>
     </Section>

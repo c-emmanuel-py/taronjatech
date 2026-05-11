@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -9,6 +10,20 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '12px',
+        pill: '9999px',
+        sm: '6px',
+        md: '8px',
+        lg: '16px',
+      },
+      fontWeight: {
+        base: '400',
+        medium: '500',
+      },
+      spacing: {
+        section: '5rem',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',

@@ -51,3 +51,5 @@ export function Modal({ isOpen, onClose, children, title, className }: ModalProp
     </div>
   )
 }
+
+export default Modal

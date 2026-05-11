@@ -79,6 +79,7 @@ export function TechStack() {
                           alt=""
                           width={20}
                           height={20}
+                          loading="lazy"
                           className="h-5 w-5 shrink-0"
                         />
                         {item.name}

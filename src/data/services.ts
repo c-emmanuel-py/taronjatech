@@ -5,6 +5,8 @@ export interface ServiceItem {
   category: ServiceCategory
   titleKey: string
   descKey: string
+  outcomeKey: string
+  painPointKey: string
   deliverableKeys: [string, string, string]
 }
 
@@ -14,6 +16,8 @@ export const services: ServiceItem[] = [
     category: 'A',
     titleKey: 'services.webAppsTitle',
     descKey: 'services.webAppsDesc',
+    outcomeKey: 'services.webAppsOutcome',
+    painPointKey: 'services.webAppsPainPoint',
     deliverableKeys: ['services.webApps1', 'services.webApps2', 'services.webApps3'],
   },
   {
@@ -21,6 +25,8 @@ export const services: ServiceItem[] = [
     category: 'A',
     titleKey: 'services.mobileAppsTitle',
     descKey: 'services.mobileAppsDesc',
+    outcomeKey: 'services.mobileAppsOutcome',
+    painPointKey: 'services.mobileAppsPainPoint',
     deliverableKeys: ['services.mobileApps1', 'services.mobileApps2', 'services.mobileApps3'],
   },
   {
@@ -28,6 +34,8 @@ export const services: ServiceItem[] = [
     category: 'A',
     titleKey: 'services.backendApisTitle',
     descKey: 'services.backendApisDesc',
+    outcomeKey: 'services.backendApisOutcome',
+    painPointKey: 'services.backendApisPainPoint',
     deliverableKeys: ['services.backendApis1', 'services.backendApis2', 'services.backendApis3'],
   },
   {
@@ -35,6 +43,8 @@ export const services: ServiceItem[] = [
     category: 'A',
     titleKey: 'services.integrationsTitle',
     descKey: 'services.integrationsDesc',
+    outcomeKey: 'services.integrationsOutcome',
+    painPointKey: 'services.integrationsPainPoint',
     deliverableKeys: ['services.integrations1', 'services.integrations2', 'services.integrations3'],
   },
   {
@@ -42,6 +52,8 @@ export const services: ServiceItem[] = [
     category: 'A',
     titleKey: 'services.internalSystemsTitle',
     descKey: 'services.internalSystemsDesc',
+    outcomeKey: 'services.internalSystemsOutcome',
+    painPointKey: 'services.internalSystemsPainPoint',
     deliverableKeys: ['services.internalSystems1', 'services.internalSystems2', 'services.internalSystems3'],
   },
   {
@@ -49,6 +61,8 @@ export const services: ServiceItem[] = [
     category: 'B',
     titleKey: 'services.dockerTitle',
     descKey: 'services.dockerDesc',
+    outcomeKey: 'services.dockerOutcome',
+    painPointKey: 'services.dockerPainPoint',
     deliverableKeys: ['services.docker1', 'services.docker2', 'services.docker3'],
   },
   {
@@ -56,6 +70,8 @@ export const services: ServiceItem[] = [
     category: 'B',
     titleKey: 'services.cicdTitle',
     descKey: 'services.cicdDesc',
+    outcomeKey: 'services.cicdOutcome',
+    painPointKey: 'services.cicdPainPoint',
     deliverableKeys: ['services.cicd1', 'services.cicd2', 'services.cicd3'],
   },
   {
@@ -63,6 +79,8 @@ export const services: ServiceItem[] = [
     category: 'B',
     titleKey: 'services.observabilityTitle',
     descKey: 'services.observabilityDesc',
+    outcomeKey: 'services.observabilityOutcome',
+    painPointKey: 'services.observabilityPainPoint',
     deliverableKeys: ['services.observability1', 'services.observability2', 'services.observability3'],
   },
   {
@@ -70,6 +88,8 @@ export const services: ServiceItem[] = [
     category: 'B',
     titleKey: 'services.envsTitle',
     descKey: 'services.envsDesc',
+    outcomeKey: 'services.envsOutcome',
+    painPointKey: 'services.envsPainPoint',
     deliverableKeys: ['services.envs1', 'services.envs2', 'services.envs3'],
   },
   {
@@ -77,6 +97,8 @@ export const services: ServiceItem[] = [
     category: 'B',
     titleKey: 'services.hardeningTitle',
     descKey: 'services.hardeningDesc',
+    outcomeKey: 'services.hardeningOutcome',
+    painPointKey: 'services.hardeningPainPoint',
     deliverableKeys: ['services.hardening1', 'services.hardening2', 'services.hardening3'],
   },
   {
@@ -84,6 +106,8 @@ export const services: ServiceItem[] = [
     category: 'C',
     titleKey: 'services.archDesignTitle',
     descKey: 'services.archDesignDesc',
+    outcomeKey: 'services.archDesignOutcome',
+    painPointKey: 'services.archDesignPainPoint',
     deliverableKeys: ['services.archDesign1', 'services.archDesign2', 'services.archDesign3'],
   },
   {
@@ -91,6 +115,8 @@ export const services: ServiceItem[] = [
     category: 'C',
     titleKey: 'services.auditTitle',
     descKey: 'services.auditDesc',
+    outcomeKey: 'services.auditOutcome',
+    painPointKey: 'services.auditPainPoint',
     deliverableKeys: ['services.audit1', 'services.audit2', 'services.audit3'],
   },
   {
@@ -98,6 +124,8 @@ export const services: ServiceItem[] = [
     category: 'C',
     titleKey: 'services.refactorTitle',
     descKey: 'services.refactorDesc',
+    outcomeKey: 'services.refactorOutcome',
+    painPointKey: 'services.refactorPainPoint',
     deliverableKeys: ['services.refactor1', 'services.refactor2', 'services.refactor3'],
   },
   {
@@ -105,6 +133,8 @@ export const services: ServiceItem[] = [
     category: 'C',
     titleKey: 'services.docHandoverTitle',
     descKey: 'services.docHandoverDesc',
+    outcomeKey: 'services.docHandoverOutcome',
+    painPointKey: 'services.docHandoverPainPoint',
     deliverableKeys: ['services.docHandover1', 'services.docHandover2', 'services.docHandover3'],
   },
   {
@@ -112,6 +142,8 @@ export const services: ServiceItem[] = [
     category: 'C',
     titleKey: 'services.roadmapTitle',
     descKey: 'services.roadmapDesc',
+    outcomeKey: 'services.roadmapOutcome',
+    painPointKey: 'services.roadmapPainPoint',
     deliverableKeys: ['services.roadmap1', 'services.roadmap2', 'services.roadmap3'],
   },
   {
@@ -119,6 +151,8 @@ export const services: ServiceItem[] = [
     category: 'D',
     titleKey: 'services.etlTitle',
     descKey: 'services.etlDesc',
+    outcomeKey: 'services.etlOutcome',
+    painPointKey: 'services.etlPainPoint',
     deliverableKeys: ['services.etl1', 'services.etl2', 'services.etl3'],
   },
   {
@@ -126,6 +160,8 @@ export const services: ServiceItem[] = [
     category: 'D',
     titleKey: 'services.automationTitle',
     descKey: 'services.automationDesc',
+    outcomeKey: 'services.automationOutcome',
+    painPointKey: 'services.automationPainPoint',
     deliverableKeys: ['services.automation1', 'services.automation2', 'services.automation3'],
   },
   {
@@ -133,6 +169,8 @@ export const services: ServiceItem[] = [
     category: 'D',
     titleKey: 'services.dashboardsTitle',
     descKey: 'services.dashboardsDesc',
+    outcomeKey: 'services.dashboardsOutcome',
+    painPointKey: 'services.dashboardsPainPoint',
     deliverableKeys: ['services.dashboards1', 'services.dashboards2', 'services.dashboards3'],
   },
   {
@@ -140,6 +178,8 @@ export const services: ServiceItem[] = [
     category: 'D',
     titleKey: 'services.botsTitle',
     descKey: 'services.botsDesc',
+    outcomeKey: 'services.botsOutcome',
+    painPointKey: 'services.botsPainPoint',
     deliverableKeys: ['services.bots1', 'services.bots2', 'services.bots3'],
   },
   {
@@ -147,6 +187,8 @@ export const services: ServiceItem[] = [
     category: 'D',
     titleKey: 'services.workflowsTitle',
     descKey: 'services.workflowsDesc',
+    outcomeKey: 'services.workflowsOutcome',
+    painPointKey: 'services.workflowsPainPoint',
     deliverableKeys: ['services.workflows1', 'services.workflows2', 'services.workflows3'],
   },
 ]

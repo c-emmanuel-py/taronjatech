@@ -1,13 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { LanguageProvider } from './i18n/LanguageProvider'
+import { ThemeProvider } from './app/ThemeProvider'
 import App from './app/App'
 import './styles/globals.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </ThemeProvider>
   </StrictMode>,
 )

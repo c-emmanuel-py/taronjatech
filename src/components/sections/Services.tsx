@@ -1,14 +1,46 @@
 import { useState } from 'react'
 import { useI18n } from '@/i18n/useI18n'
-import { scrollToId } from '@/utils/scroll'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
 import { cn } from '@/utils/cn'
 import { services, categoryKeyMap, type ServiceCategory } from '@/data/services'
 
 const categories: ServiceCategory[] = ['A', 'B', 'C', 'D']
+
+function ServiceIcon({ category }: { category: ServiceCategory }) {
+  if (category === 'A') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <rect x="3" y="4" width="18" height="14" rx="2" />
+        <path d="M8 20h8" />
+      </svg>
+    )
+  }
+  if (category === 'B') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <path d="M4 7h16M4 12h16M4 17h16" />
+        <circle cx="7" cy="7" r="1" />
+        <circle cx="12" cy="12" r="1" />
+        <circle cx="17" cy="17" r="1" />
+      </svg>
+    )
+  }
+  if (category === 'C') {
+    return (
+      <svg viewBox="0 0 24 24" className="h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <path d="M4 20 12 4l8 16" />
+        <path d="M8 14h8" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" className="h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+      <path d="M5 19h14M7 15V9m5 6V5m5 10v-8" />
+    </svg>
+  )
+}
 
 export function Services() {
   const { t } = useI18n()
@@ -102,34 +134,22 @@ export function Services() {
               className="animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.06}s`, opacity: 0, animationFillMode: 'forwards' }}
             >
-            <Card className="flex flex-col">
-              <h4 className="font-semibold text-gray-900">
-                {t(service.titleKey)}
-              </h4>
-              <p className="mt-2 text-sm text-gray-600 flex-1">
-                {t(service.descKey)}
-              </p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-600 list-disc list-inside">
-                {service.deliverableKeys.map((dk) => (
-                  <li key={dk}>{t(dk)}</li>
-                ))}
-              </ul>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-4 w-fit"
-                onClick={() => {
-                  scrollToId('contact')
-                  const select = document.querySelector<HTMLSelectElement>('[name="service"]')
-                  if (select) {
-                    select.value = service.id
-                    select.dispatchEvent(new Event('change', { bubbles: true }))
-                  }
-                }}
-              >
-                {t('services.ctaCard')}
-              </Button>
-            </Card>
+              <Card className="group flex h-full flex-col border-gray-200 transition-all duration-200 hover:-translate-y-1 hover:border-accent/30">
+                <div className="mb-3">
+                  <ServiceIcon category={service.category} />
+                </div>
+                <h4 className="text-base font-medium text-gray-900">{t(service.titleKey)}</h4>
+                <div className="relative mt-2 w-fit">
+                  <p className="text-[13px] font-semibold text-accent">→ {t(service.outcomeKey)}</p>
+                  <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-accent transition-all duration-200 group-hover:w-full" />
+                </div>
+                <p className="mt-3 flex-1 text-[13px] text-gray-600">{t(service.descKey)}</p>
+                <div className="mt-4">
+                  <span className="inline-flex rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-600">
+                    {t(service.painPointKey)}
+                  </span>
+                </div>
+              </Card>
             </div>
           ))}
         </div>

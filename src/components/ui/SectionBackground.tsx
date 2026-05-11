@@ -50,3 +50,5 @@ export function SectionBackground({
     </>
   )
 }
+
+export default SectionBackground

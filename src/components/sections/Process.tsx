@@ -3,11 +3,11 @@ import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 
 const steps = [
-  { id: 1, titleKey: 'process.step1', descKey: 'process.step1Desc' },
-  { id: 2, titleKey: 'process.step2', descKey: 'process.step2Desc' },
-  { id: 3, titleKey: 'process.step3', descKey: 'process.step3Desc' },
-  { id: 4, titleKey: 'process.step4', descKey: 'process.step4Desc' },
-  { id: 5, titleKey: 'process.step5', descKey: 'process.step5Desc' },
+  { id: 1, titleKey: 'process.step1', descKey: 'process.step1Desc', benefitKey: 'process.step1Benefit' },
+  { id: 2, titleKey: 'process.step2', descKey: 'process.step2Desc', benefitKey: 'process.step2Benefit' },
+  { id: 3, titleKey: 'process.step3', descKey: 'process.step3Desc', benefitKey: 'process.step3Benefit' },
+  { id: 4, titleKey: 'process.step4', descKey: 'process.step4Desc', benefitKey: 'process.step4Benefit' },
+  { id: 5, titleKey: 'process.step5', descKey: 'process.step5Desc', benefitKey: 'process.step5Benefit' },
 ] as const
 
 export function Process() {
@@ -43,6 +43,7 @@ export function Process() {
                 </div>
                 <h3 className="mt-3 font-semibold text-gray-900">{t(step.titleKey)}</h3>
                 <p className="mt-1 text-sm text-gray-600 max-w-[180px]">{t(step.descKey)}</p>
+                <p className="mt-2 text-xs font-medium text-accent max-w-[180px]">{t(step.benefitKey)}</p>
               </div>
             ))}
           </div>
@@ -58,6 +59,7 @@ export function Process() {
               <div>
                 <h3 className="font-semibold text-gray-900">{t(step.titleKey)}</h3>
                 <p className="mt-1 text-sm text-gray-600">{t(step.descKey)}</p>
+                <p className="mt-2 text-xs font-medium text-accent">{t(step.benefitKey)}</p>
               </div>
             </div>
           ))}
